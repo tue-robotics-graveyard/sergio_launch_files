@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+	
+	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)" />
+
+    <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
+    
+    <!-- load robot -->
+    <param name="/amigo2/robot_description" textfile="$(find amigo2_description)/urdf/amigo2.urdf" />
+    
+    <!-- DIAGNOSTICS -->
+	<include file="$(find bamigo_launch_files)/launch/diagnostics/diagnostics.launch">
+		<arg name="ROBOT_REAL" value="$(arg ROBOT_REAL)"/>
+	</include>
+    
+    <group if="$(arg ROBOT_REAL)">
+		<!-- REAL ROBOT -->
+		
+		<!-- robot model & integration with low level encoder data-->
+        <!-- <include file="$(find amigo_state_publisher)/start.launch" />-->
+		
+	</group>
+	
+</launch>
