@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
+    <arg name="snapmap" default="false"/>
+    <arg name="nav" default="true"/>          <!-- default navigation is used -->
+    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)"/>
+    
+	<group if="$(arg ROBOT_REAL)">
+		<!-- REAL ROBOT -->
+
+		<!-- Start all sensors -->
+		<include file="$(find bamigo_launch_files)/launch/sensors/sensors.launch" />	
+	</group>
+
+    <!-- LOCALIZATION -->
+    <include file="$(find bamigo_launch_files)/launch/middleware/localization.launch"/>
+
+	<!-- NAVIGATION -->
+    <include file="$(find bamigo_launch_files)/launch/middleware/base_navigation.launch"/>
+
+</launch>

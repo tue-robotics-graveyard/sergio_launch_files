@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!-- LOCALIZATION -->
+
+<launch>  
+
+    <arg name="loc" default="$(optenv BAMIGO_LOC odom)"/>
+
+    <include file="$(find bamigo_launch_files)/launch/middleware/loc_$(arg loc).launch"/>
+
+</launch>
+
+
+
