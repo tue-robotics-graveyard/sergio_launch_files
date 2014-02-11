@@ -17,19 +17,19 @@
 
     <node pkg="tue_move_base" type="move_base" respawn="true" name="move_base" output="screen" machine="$(arg machine)">
         <!-- local and global planner parameters -->        
-        <rosparam file="$(find bamigo_parameter_files)/parameters/base_navigation/move_base.yaml" command="load" />
+        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/move_base.yaml" command="load" />
 
         <!-- Common costmap parameters -->        
-        <rosparam file="$(find bamigo_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
-        <rosparam file="$(find bamigo_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="static_costmap" /> 
+        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="static_costmap" /> 
 
         <!-- Global costmap settings -->
-        <rosparam file="$(find bamigo_parameter_files)/parameters/base_navigation/costmap_global_params.yaml" command="load" />
+        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_global_params.yaml" command="load" />
 
         <!-- Static costmap settings -->
-        <rosparam file="$(find bamigo_parameter_files)/parameters/base_navigation/costmap_static_params.yaml" command="load" />
+        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_static_params.yaml" command="load" />
 
-        <remap from="cmd_vel" to="/amigo2/base/references"/>
+        <remap from="cmd_vel" to="/sergio/base/references"/>
         
     </node>
 

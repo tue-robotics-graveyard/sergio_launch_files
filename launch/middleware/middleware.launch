@@ -11,13 +11,13 @@
 		<!-- REAL ROBOT -->
 
 		<!-- Start all sensors -->
-		<include file="$(find bamigo_launch_files)/launch/sensors/sensors.launch" />	
+		<include file="$(find sergio_launch_files)/launch/sensors/sensors.launch" />	
 	</group>
 
     <!-- LOCALIZATION -->
-    <include file="$(find bamigo_launch_files)/launch/middleware/localization.launch"/>
+    <include file="$(find sergio_launch_files)/launch/middleware/localization.launch"/>
 
 	<!-- NAVIGATION -->
-    <include file="$(find bamigo_launch_files)/launch/middleware/base_navigation.launch"/>
+    <include file="$(find sergio_launch_files)/launch/middleware/base_navigation.launch"/>
 
 </launch>

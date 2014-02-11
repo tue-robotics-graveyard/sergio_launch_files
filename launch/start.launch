@@ -11,7 +11,7 @@
     <param name="/amigo2/robot_description" textfile="$(find amigo2_description)/urdf/amigo2.urdf" />
     
     <!-- DIAGNOSTICS -->
-	<include file="$(find bamigo_launch_files)/launch/diagnostics/diagnostics.launch">
+	<include file="$(find sergio_launch_files)/launch/diagnostics/diagnostics.launch">
 		<arg name="ROBOT_REAL" value="$(arg ROBOT_REAL)"/>
 	</include>
     
@@ -29,7 +29,7 @@
 
 	<group unless="$(arg ROBOT_REAL)">
         <!-- SIMULATION -->
-        <include file="$(find bamigo_launch_files)/launch/simulator/$(optenv SIMULATOR).launch">
+        <include file="$(find sergio_launch_files)/launch/simulator/$(optenv SIMULATOR).launch">
             <arg name="gui" value="$(arg gui)"/>
             <arg name="env" value="$(arg env)"/>
         </include>     

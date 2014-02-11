@@ -4,9 +4,9 @@
 
 <launch>  
 
-    <arg name="loc" default="$(optenv BAMIGO_LOC odom)"/>
+    <arg name="loc" default="$(optenv SERGIO_LOC odom)"/>
 
-    <include file="$(find bamigo_launch_files)/launch/middleware/loc_$(arg loc).launch"/>
+    <include file="$(find sergio_launch_files)/launch/middleware/loc_$(arg loc).launch"/>
 
 </launch>
 

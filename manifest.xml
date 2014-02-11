@@ -1,13 +1,13 @@
 <package>
-  <description brief="bamigo_launch_files">
+  <description brief="sergio_launch_files">
 
-     bamigo_launch_files
+     sergio_launch_files
 
   </description>
   <author>amigo</author>
   <license>BSD</license>
   <review status="unreviewed" notes=""/>
-  <url>http://ros.org/wiki/bamigo_launch_files</url>
+  <url>http://ros.org/wiki/sergio_launch_files</url>
   
   <depend package="emergency_speakup"/>
 
