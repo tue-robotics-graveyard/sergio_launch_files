@@ -1,6 +1,6 @@
 <launch>
 
-    <rosparam file="$(find bamigo_launch_files)/launch/diagnostics/parameters/battery_parameters.yaml" command="load" />
+    <rosparam file="$(find sergio_launch_files)/launch/diagnostics/parameters/battery_parameters.yaml" command="load" />
 
     <node pkg="battery_manager" type="battery_manager" respawn="false" name="battery_manager" output="screen">
     </node>

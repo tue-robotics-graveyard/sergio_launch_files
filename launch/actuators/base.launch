@@ -4,7 +4,7 @@
     <node name="etherCAT" pkg="ocl" type="deployer-gnulinux" args="
     ETHERCAT_HARDWARE
     -linfo
-    -s $(find bamigo_etherCAT)/soem.ops 
-    -s $(find bamigo_etherCAT)/base_controller.ops
+    -s $(find sergio_etherCAT)/soem.ops 
+    -s $(find sergio_etherCAT)/base_controller.ops
     --" output="screen"></node><!--</node> machine="amigo2"></node>   --><!--ToDo: correct machine file-->
 </launch>
