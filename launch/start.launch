@@ -3,7 +3,7 @@
 	
 	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)" />
 	<arg name="gui" default="true"/>
-	<arg name="robot_name" default="amigo2"/>
+	<arg name="robot_name" default="sergio"/>
 
     <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
     
