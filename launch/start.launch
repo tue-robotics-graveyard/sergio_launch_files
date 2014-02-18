@@ -8,7 +8,7 @@
     <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
     
     <!-- load robot -->
-    <param name="/amigo2/robot_description" textfile="$(find amigo2_description)/urdf/amigo2.urdf" />
+    <param name="/$(arg robot_name)/robot_description" textfile="$(find amigo2_description)/urdf/amigo2.urdf" />
     
     <!-- DIAGNOSTICS -->
 	<include file="$(find sergio_launch_files)/launch/diagnostics/diagnostics.launch">
