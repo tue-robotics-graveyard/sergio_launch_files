@@ -4,7 +4,7 @@
 
 <launch>  
 
-    <arg name="loc" default="$(optenv SERGIO_LOC odom)"/>
+    <arg name="loc" default="$(optenv SERGIO_LOC amcl)"/>
 
     <include file="$(find sergio_launch_files)/launch/middleware/loc_$(arg loc).launch"/>
 
