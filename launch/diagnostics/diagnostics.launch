@@ -6,9 +6,7 @@
     
     <!-- Collects all the diagnostics messages -->
     <!-- DIRECTLY INCLUDES LAUNCH FILE OF AMIGO1 -->
-	<include file="$(find amigo_diagnostics)/launch/aggregator.launch">
-		<arg name="ROBOT_REAL" value="$(arg ROBOT_REAL)"/>
-	</include>
+    <include file="$(find amigo_diagnostics)/launch/aggregator.launch" />
 
 	<!-- Checks if nodes are still running -->
 	<rosparam command="load" file="$(find sergio_launch_files)/launch/diagnostics/parameters/neglect_nodes.yaml" />
