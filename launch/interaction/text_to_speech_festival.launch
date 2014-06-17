@@ -3,7 +3,7 @@
 <launch>
 
     <arg name="machine" value="$(optenv MACHINE_TEXT_TO_SPEECH localhost)"/>
-    <include file="$(find amigo_machine_files)/machines/$(arg machine).machine" />
+    <include file="$(find sergio_machine_files)/machines/$(arg machine).machine" />
 	    
     <rosparam file="$(find text_to_speech)/parameters/text_to_speech.yaml" command="load" />
 
