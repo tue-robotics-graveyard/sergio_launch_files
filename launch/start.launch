@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 	
-	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)" />
+	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A_new)" />
 	<arg name="gui" default="true"/>
 	<arg name="robot_name" default="sergio"/>
 
@@ -44,5 +44,8 @@
             <arg name="env" value="$(arg env)"/>
         </include>     
     </group>
+    
+     <!-- Phone UI --> <!-- only works with groovy -->
+    <include file="$(find amigo_mobile_ui)/launch/sergio.launch"/>
 	
 </launch>
