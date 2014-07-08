@@ -11,6 +11,9 @@
   
   <depend package="emergency_speakup"/>
 
+  <!-- simulation -->
+  <depend package="sergio_gazebo"/>
+
 </package>
 
 

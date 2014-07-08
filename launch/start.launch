@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <launch>
 	
-	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A_new)" />
+	<arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_B)" />
 	<arg name="gui" default="true"/>
 	<arg name="robot_name" default="sergio"/>
 
     <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
     
     <!-- load robot -->
-    <param name="/$(arg robot_name)/robot_description" textfile="$(find sergio_description)/urdf/amigo2.urdf" />
+    <param name="/$(arg robot_name)/robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf" />
     
     <!-- DIAGNOSTICS -->
 	<include file="$(find sergio_launch_files)/launch/diagnostics/diagnostics.launch">

@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="gui" default="true"/>
-    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)" />
+    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_B)" />
     <arg name="robot_init_x" default="$(optenv GAZEBO_ROBOT_INIT_X 0)"/>
     <arg name="robot_init_y" default="$(optenv GAZEBO_ROBOT_INIT_Y 0)"/>
     <arg name="robot_init_phi" default="$(optenv GAZEBO_ROBOT_INIT_PHI 0)"/>
 
     <node name="gazebo" pkg="amigo_launch_files" type="gazebo_with_world.bash" args="$(find tue_gazebo_worlds)/worlds/$(arg env).sdf" respawn="false" output="screen"/>
 
-    <include file="$(find amigo2_gazebo)/launch/start.launch">
+    <include file="$(find sergio_gazebo)/launch/start.launch">
         <arg name="robot_init_x" value="$(arg robot_init_x)"/>
         <arg name="robot_init_y" value="$(arg robot_init_y)"/>
         <arg name="robot_init_phi" value="$(arg robot_init_phi)"/>

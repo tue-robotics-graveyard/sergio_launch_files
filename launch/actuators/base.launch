@@ -1,10 +1,10 @@
 <launch>
-    <!--<include file="$(find amigo_machine_files)/machines/amigo2.machine" />--><!--ToDo: correct machine file-->
+    <!--<include file="$(find sergio_machine_files)/machines/sergio1.machine" />--><!--ToDo: correct machine file-->
     
     <node name="sergio_base_controller" pkg="ocl" type="deployer-gnulinux" args="
     ETHERCAT_HARDWARE
     
     -s $(find sergio_etherCAT)/soem.ops 
     -s $(find sergio_etherCAT)/base_controller.ops
-    --" output="screen"></node><!--</node> machine="amigo2"></node>   --><!--ToDo: correct machine file-->
+    --" output="screen"></node><!--</node> machine="sergio1"></node>   --><!--ToDo: correct machine file-->
 </launch>
