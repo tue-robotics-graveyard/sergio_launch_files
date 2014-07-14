@@ -3,10 +3,10 @@
 <launch>
 
     <arg name="machine" value="$(optenv MACHINE_BASE_NAVIGATION localhost)"/>
-    <include file="$(find amigo_machine_files)/machines/$(arg machine).machine" />
+    <include file="$(find sergio_machine_files)/machines/$(arg machine).machine" />
     <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
     <arg name="gmapping" default="false"/>    <!-- default localization is amcl, if set to true: gmapping -->
-    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_A)" />
+    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_B)" />
     
     <!-- map server should not be started if we are using gmapping -->
     <group unless="$(arg gmapping)">
@@ -15,22 +15,24 @@
         </node> 
     </group>
 
-    <node pkg="tue_move_base" type="move_base" respawn="true" name="move_base" output="screen" machine="$(arg machine)">
+ <node pkg="tue_move_base" type="move_base" respawn="true" name="move_base" output="screen" machine="$(arg machine)">  
+            
         <!-- local and global planner parameters -->        
-        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/move_base.yaml" command="load" />
+         <rosparam file="$(find tue_move_base)/parameters/move_base.yaml" command="load" /> 
 
         <!-- Common costmap parameters -->        
-        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="global_costmap" />
-        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_common_params.yaml" command="load" ns="static_costmap" /> 
+        <rosparam file="$(find tue_move_base)/parameters/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find tue_move_base)/parameters/costmap_common_params.yaml" command="load" ns="static_costmap" />  
 
         <!-- Global costmap settings -->
-        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_global_params.yaml" command="load" />
+        <rosparam file="$(find tue_move_base)/parameters/costmap_global_params.yaml" command="load" />  
 
         <!-- Static costmap settings -->
-        <rosparam file="$(find sergio_parameter_files)/parameters/base_navigation/costmap_static_params.yaml" command="load" />
-
-        <remap from="cmd_vel" to="/sergio/base/references"/>
+        <rosparam file="$(find tue_move_base)/parameters/costmap_static_params.yaml" command="load" /> 
         
-    </node>
+
+        <remap from="cmd_vel" to="/sergio/base/references"/> 
+        
+     </node>
 
 </launch>

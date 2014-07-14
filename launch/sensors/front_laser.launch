@@ -2,15 +2,14 @@
 
 <launch>
 
-<!--        <include file="$(find amigo_machine_files)/machines/sergio1.machine" />
- machine="sergio1"-->
+      <include file="$(find sergio_machine_files)/machines/sergio1.machine" />
 
         <node pkg="hokuyo_node" type="hokuyo_node" name="front_hokuyo_node" output="screen">
             <remap from="scan" to="/sergio/base_front_scan"/>
             <param name="frame_id" value="/sergio/base_laser"/>
         </node>
 
-        <node name="$(anon dynparam)" pkg="dynamic_reconfigure" type="dynparam" args="set_from_parameters front_hokuyo_node">
+        <node name="$(anon dynparam)" pkg="dynamic_reconfigure" type="dynparam" args="set_from_parameters front_hokuyo_node" machine="sergio1">
             <param name="min_ang" type="double" value="-1.35" />
             <param name="max_ang" type="double" value="1.35" />
         </node>
