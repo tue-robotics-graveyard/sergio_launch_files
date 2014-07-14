@@ -18,17 +18,17 @@
  <node pkg="tue_move_base" type="move_base" respawn="true" name="move_base" output="screen" machine="$(arg machine)">  
             
         <!-- local and global planner parameters -->        
-         <rosparam file="$(find tue_move_base)/parameters/move_base.yaml" command="load" /> 
+         <rosparam file="$(find tue_move_base)/parameters/sergio/move_base.yaml" command="load" /> 
 
         <!-- Common costmap parameters -->        
-        <rosparam file="$(find tue_move_base)/parameters/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
-        <rosparam file="$(find tue_move_base)/parameters/costmap_common_params.yaml" command="load" ns="static_costmap" />  
+        <rosparam file="$(find tue_move_base)/parameters/sergio/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find tue_move_base)/parameters/sergio/costmap_common_params.yaml" command="load" ns="static_costmap" />  
 
         <!-- Global costmap settings -->
-        <rosparam file="$(find tue_move_base)/parameters/costmap_global_params.yaml" command="load" />  
+        <rosparam file="$(find tue_move_base)/parameters/sergio/costmap_global_params.yaml" command="load" />  
 
         <!-- Static costmap settings -->
-        <rosparam file="$(find tue_move_base)/parameters/costmap_static_params.yaml" command="load" /> 
+        <rosparam file="$(find tue_move_base)/parameters/sergio/costmap_static_params.yaml" command="load" /> 
         
 
         <remap from="cmd_vel" to="/sergio/base/references"/> 
