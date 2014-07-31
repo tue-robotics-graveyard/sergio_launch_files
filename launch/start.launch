@@ -14,16 +14,16 @@
 	<include file="$(find sergio_launch_files)/launch/diagnostics/diagnostics.launch">
 		<arg name="ROBOT_REAL" value="$(arg ROBOT_REAL)"/>
 	</include>
+	
+	<!-- Robot state publisher -->
+	<node pkg="robot_state_publisher" type="state_publisher" name="$(arg robot_name)_state_publisher" ns="$(arg robot_name)">
+		<param name="publish_frequency" type="double" value="50.0" />
+		<param name="tf_prefix" type="string" value="$(arg robot_name)" />
+		<remap from="joint_states" to="/$(arg robot_name)/joint_states"/>
+	</node>
     
     <group if="$(arg ROBOT_REAL)">
 		<!-- REAL ROBOT -->
-		
-		<!-- Robot state publisher -->
-		<node pkg="robot_state_publisher" type="state_publisher" name="$(arg robot_name)_state_publisher" ns="$(arg robot_name)">
-			<param name="publish_frequency" type="double" value="50.0" />
-			<param name="tf_prefix" type="string" value="$(arg robot_name)" />
-			<remap from="joint_states" to="/$(arg robot_name)/joint_states"/>
-		</node>
 		
 		<!-- Front laser -->
 		<include file="$(find sergio_launch_files)/launch/sensors/front_laser.launch"/>
