@@ -32,6 +32,7 @@
         
 
         <remap from="cmd_vel" to="/sergio/base/references"/> 
+        <remap from="odom" to="/sergio/base/measurements"/>
         
      </node>
 
