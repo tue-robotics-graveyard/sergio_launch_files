@@ -1,4 +1,4 @@
-launch>
+<launch>
   <!-- ToDo: include correct machine files -->
   <!--
   <include file="$(find sergio_machine_files)/machines/sergio1.machine" />
