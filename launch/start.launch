@@ -46,6 +46,6 @@
     </group>
     
      <!-- Phone UI --> <!-- only works with groovy -->
-    <include file="$(find amigo_mobile_ui)/launch/sergio.launch"/>
+    <include file="$(find tue_mobile_ui)/launch/sergio.launch"/>
 	
 </launch>
