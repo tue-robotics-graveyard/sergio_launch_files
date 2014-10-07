@@ -5,24 +5,34 @@
     <arg name="ROBOT_REAL" />
     
     <!-- Collects all the diagnostics messages -->
-    <!-- DIRECTLY INCLUDES LAUNCH FILE OF AMIGO1 -->
+    <!-- Not robot specific -->
     <include file="$(find amigo_diagnostics)/launch/aggregator.launch" />
 
 	<!-- Checks if nodes are still running -->
 	<rosparam command="load" file="$(find sergio_launch_files)/launch/diagnostics/parameters/neglect_nodes.yaml" />
 	<node name="node_alive_server" type="node_alive_server" pkg="node_alive" />
 
+	<!-- Start challenge logger -->
+	<!-- TODO create sergio_diagnostics
+	<include file="$(find challenge_logger)/launch/start.launch" />
+	-->
+	<!-- The challenge_logger needs cpu_monitor information -->
+	<!--
+	<include file="$(find sergio_diagnostics)/launch/cpu_monitor.launch" />
+	<include file="$(find sergio_diagnostics)/launch/hd_monitor.launch" />
+	<include file="$(find sergio_diagnostics)/launch/ntp_monitor.launch" />
+	-->
+
     <group if="$(arg ROBOT_REAL)">
-		<!-- Nobody is taking note of it anyway :(
-		<include file="$(find amigo_diagnostics)/launch/cpu_monitor.launch" />-->
-		<include file="$(find sergio_launch_files)/launch/diagnostics/ntp_monitor.launch" />    
 	
 		<!-- BATTERY -->
 		<include file="$(find sergio_launch_files)/launch/diagnostics/battery_manager.launch"/>
 	
 		<!-- EMERGENCY BUTTON -->
-		<node pkg="emergency_speakup" type="emergency_speakup" respawn="true" name="emergency_speakup"/>
-			
+		<node pkg="emergency_speakup" type="emergency_speakup" respawn="true" name="emergency_speakup">
+			<remap from="/emergency_switch" to="/sergio/emergency_switch"/>
+		</node>
+	
 	</group>
     
 </launch>
