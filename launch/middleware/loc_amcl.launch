@@ -17,7 +17,7 @@
 
      <!-- AMCL -->
      <node pkg="amcl" type="amcl" name="amcl" machine="$(arg machine)" output="screen">
-         <remap from="/scan" to="/sergio/base_front_scan" />
+         <remap from="/scan" to="/sergio/base_front_laser" />
 	 <remap from="/map" to="/loc_map" />
 	 <remap from="/initialpose" to="/sergio/initialpose" />
          <!-- Publish scans from best pose at a max of 10 Hz -->
