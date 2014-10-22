@@ -20,5 +20,12 @@
 
 	<!-- NAVIGATION -->
     <include file="$(find sergio_launch_files)/launch/navigation/cb_base_navigation.launch"/> 
+    
+    <!-- World model -->
+    <node name="ed_server" pkg="ed" type="ed_server" args="$(find ed)/config/config_sergio.yml" output="screen" />
+    
+    <!-- Reasoner -->
+    <param name="/reasoner/world_model_type" value="ed"/>
+    <include file="$(find tue_reasoner_core)/launch/start.launch" />
 
 </launch>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-    <arg name="robot_name" default="amigo"/>
+    <arg name="robot_name" default="sergio"/>
 
     <arg name="gui" default="true"/>
     <arg name="ROBOT_COMPLEXITY" default="$(optenv ROBOT_COMPLEXITY complex)" />
