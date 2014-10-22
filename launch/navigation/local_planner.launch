@@ -9,13 +9,13 @@
     <node pkg="cb_base_navigation" type="cb_base_navigation_local_planner_interface" name="local_planner_interface" ns="cb_base_navigation" output="screen" launch-prefix="$(arg launch-prefix)">
 
         <!-- Local Planner Settings -->        
-        <rosparam file="$(find sergio_launch_files)/params/navigation/local_planner.yaml" command="load" />
+        <rosparam file="$(find sergio_parameters)/parameters/navigation/local_planner.yaml" command="load" />
 
         <!-- Local Costmap Settings -->
-        <rosparam file="$(find sergio_launch_files)/params/navigation/local_costmap.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find sergio_parameters)/parameters/navigation/local_costmap.yaml" command="load" ns="local_costmap" />
 
         <remap from="odom" to="/sergio/base/measurements" />
-        <remap from="/amigo/base/references" to="/sergio/base/references" />
+        <remap from="cmd_vel" to="/sergio/base/references" />
 
     </node>
 

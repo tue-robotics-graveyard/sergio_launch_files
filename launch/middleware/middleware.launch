@@ -19,6 +19,6 @@
     <include file="$(find sergio_launch_files)/launch/middleware/localization.launch"/>
 
 	<!-- NAVIGATION -->
-    <include file="$(find sergio_launch_files)/launch/middleware/base_navigation.launch"/> 
+    <include file="$(find sergio_launch_files)/launch/navigation/cb_base_navigation.launch"/> 
 
 </launch>
