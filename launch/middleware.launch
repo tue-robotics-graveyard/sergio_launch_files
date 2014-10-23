@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <param name="/use_ed" value="true"/>
+
+    <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_B)"/>
+    <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
+
+    <!-- LOCALIZATION -->
+    <include file="$(find sergio_launch_files)/launch/localization/localization.launch"/>
+
+	<!-- NAVIGATION -->
+    <include file="$(find sergio_launch_files)/launch/navigation/cb_base_navigation.launch"/> 
+
+    <!-- RGBD SERVER -->
+    <node name="rgbd_encoder" pkg="rgbd" type="rgbd_server" output="screen">
+        <remap from="cam_info" to="/sergio/top_kinect/rgb/camera_info"/>
+	    <remap from="rgb_image" to="/sergio/top_kinect/rgb/image_color"/>
+	    <remap from="depth_image" to="/sergio/top_kinect/depth_registered/image_rect"/>
+	    <remap from="output" to="/sergio/top_kinect/rgbd"/>
+	</node>
+
+    <!-- World model -->
+    <node name="ed_server" pkg="ed" type="ed_server" args="$(find ed)/config/config_sergio.yml" output="screen" />
+    
+    <!-- Reasoner -->
+    <param name="/reasoner/world_model_type" value="ed"/>
+    <include file="$(find tue_reasoner_core)/launch/start.launch" />
+
+</launch>

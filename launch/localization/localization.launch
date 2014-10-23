@@ -6,7 +6,7 @@
 
     <arg name="loc" default="$(optenv SERGIO_LOC amcl)"/>
 
-    <include file="$(find sergio_launch_files)/launch/middleware/loc_$(arg loc).launch"/>
+    <include file="$(find sergio_launch_files)/launch/localization/loc_$(arg loc).launch"/>
 
 </launch>
 
