@@ -26,6 +26,16 @@
     
     <!-- Reasoner -->
     <param name="/reasoner/world_model_type" value="ed"/>
-    <include file="$(find tue_reasoner_core)/launch/start.launch" />
+	<include file="$(find tue_reasoner_core)/launch/start.launch" />
+
+    <!-- Start text to speech -->
+    <include file="$(find sergio_launch_files)/launch/interaction/text_to_speech.launch" />
+
+    <!-- Start speech recognition -->
+    <include file="$(find sergio_launch_files)/launch/interaction/speech_recognition.launch" />
+
+    <!-- Start speech interpreter -->
+    <include file="$(find sergio_launch_files)/launch/interaction/speech_interpreter.launch" />
+
 
 </launch>
