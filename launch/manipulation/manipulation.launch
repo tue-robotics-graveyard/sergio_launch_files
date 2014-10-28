@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <!-- TORSO SERVER -->
+    <include file="$(find sergio_launch_files)/launch/manipulation/torso.launch"/>
+    
+</launch>
