@@ -18,7 +18,8 @@
         <!-- Chain information -->
         <param name="root_link" value="base_link"/>
         <param name="tip_link" value="grippoint_left"/>
-        <param name="robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf"/>        
+        <param name="robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf"/>
+        <param name="use_constrained_solver" value="true"/>
 
         <!-- Pre-grasping parameters -->
         <param name="max_yaw_delta" value="2.0"/>
@@ -45,7 +46,8 @@
         <!-- Chain information -->
         <param name="root_link" value="base_link"/>
         <param name="tip_link" value="grippoint_right"/>
-        <param name="robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf"/>        
+        <param name="robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf"/>
+        <param name="use_constrained_solver" value="true"/>
 
         <!-- Pre-grasping parameters -->
         <param name="max_yaw_delta" value="2.0"/>

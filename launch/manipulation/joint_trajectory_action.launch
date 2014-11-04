@@ -8,6 +8,8 @@
         <remap from="joint_trajectory_action" to="joint_trajectory_action_left" />
         <remap from="measurements" to="/sergio/left_arm/measurements" />
 	    <remap from="references" to="/sergio/left_arm/references" />
+        <remap from="torso/references" to="/sergio/torso/references"/>
+        <remap from="torso/measurements" to="/sergio/torso/measurements"/>
         <param name="tf_prefix" value="sergio"/>
     </node>
 
@@ -16,6 +18,8 @@
         <remap from="joint_trajectory_action" to="joint_trajectory_action_right" />
         <remap from="measurements" to="/sergio/right_arm/measurements" />
 	    <remap from="references" to="/sergio/right_arm/references" />
+        <remap from="torso/references" to="/sergio/torso/references"/>
+        <remap from="torso/measurements" to="/sergio/torso/measurements"/>
         <param name="tf_prefix" value="sergio"/>
     </node>
 
