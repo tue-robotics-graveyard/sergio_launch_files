@@ -38,7 +38,7 @@
     <include file="$(find sergio_launch_files)/launch/interaction/speech_interpreter.launch" />
     
     <!-- Start manipulation stuff -->
-    <include file="$(find sergio_launch_files)/launch/manipulation/manipulation.launch" />
+    <!--<include file="$(find sergio_launch_files)/launch/manipulation/manipulation.launch" />-->
 
 
 </launch>
