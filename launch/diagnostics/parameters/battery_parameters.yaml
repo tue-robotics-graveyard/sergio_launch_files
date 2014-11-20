@@ -1,10 +1,10 @@
 battery_manager:
-  low_power_margin_ch1: 4.5
-  high_power_margin_ch1: 5.8
-  low_power_margin_ch2: 4.5
-  high_power_margin_ch2: 5.14
-  nominal_power: 4.75
-  conversion_factor: 5.19
+  low_power_margin_ch1: 9.0
+  high_power_margin_ch1: 11.60
+  low_power_margin_ch2: 9.0
+  high_power_margin_ch2: 10.28
+  nominal_power: 9.50
+  conversion_factor: 10.46
   alarm_period: 60.0
   max_alarms: 3
   fuse_subs:
