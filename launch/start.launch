@@ -11,7 +11,7 @@
     <param name="/$(arg robot_name)/robot_description" textfile="$(find sergio_description)/urdf/sergio.urdf" />
     
     <!-- Load robot specific skill parameters -->
-    <rosparam file="$(find sergio_description)/custom/skills.yaml" command="load" ns="/$(arg robot_name)/skills"/>
+    <rosparam file="$(find amigo_description)/custom/skills.yaml" command="load" ns="/$(arg robot_name)/skills"/>
     
     <!-- DIAGNOSTICS -->
 	<include file="$(find sergio_launch_files)/launch/diagnostics/diagnostics.launch">
