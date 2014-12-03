@@ -3,11 +3,11 @@
 <launch>
 
     <arg name="machine" value="$(optenv MACHINE_TEXT_TO_SPEECH localhost)"/>
-    <include file="$(find sergio_machine_files)/machines/$(arg machine).machine" />
+    <include file="$(env ROBOT_MACHINE_DIR)/machines/$(arg machine).machine" />
 	    
     <rosparam file="$(find text_to_speech)/parameters/text_to_speech.yaml" command="load" />
 
-    <node pkg="text_to_speech" type="text_to_speech.py" respawn="false" name="text_to_speech" machine="$(arg machine)" output="screen">
+    <node pkg="text_to_speech" type="text_to_speech_node.py" respawn="false" name="text_to_speech" machine="$(arg machine)" output="screen">
         <param name="tts_module" value="philips"/>
         <param name="philips_executable" value="$(find philips_text_to_speech)/sergio/ptts_v911.exe"/>
         <param name="key" textfile="$(find philips_text_to_speech)/key"/>

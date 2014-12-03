@@ -3,7 +3,7 @@
 <launch>
     
     <arg name="machine" default="localhost"/>
-    <include file="$(find amigo_machine_files)/machines/$(arg machine).machine" />
+    <include file="$(env ROBOT_MACHINE_DIR)/machines/$(arg machine).machine" />
 
     <node pkg="torso_server" type="torso_server" respawn="false" name="torso_server" output="screen" ns="sergio" machine="$(arg machine)">
         <remap from="/sergio/torso_server/references" to="/sergio/torso/references"/>
