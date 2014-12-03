@@ -11,7 +11,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>emergency_speakup</run_depend>
-  <run_depend>sergio_gazebo</run_depend>
 
   <build_depend>sergio_description</build_depend>
   <run_depend>sergio_description</run_depend>
