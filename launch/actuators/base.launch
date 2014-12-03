@@ -1,10 +1,7 @@
-<launch>
-    <!--<include file="$(find sergio_machine_files)/machines/sergio1.machine" />--><!--ToDo: correct machine file-->
+<?xml version="1.0"?>
+
+<launch>  
+
+    <include  file="$(find sergio_hardware)/launch/base.launch"/>
     
-    <node name="sergio_base_controller" pkg="ocl" type="deployer-gnulinux" args="
-    ETHERCAT_HARDWARE
-    
-    -s $(find sergio_etherCAT)/soem.ops 
-    -s $(find sergio_etherCAT)/base_controller.ops
-    --" output="screen"></node><!--</node> machine="sergio1"></node>   --><!--ToDo: correct machine file-->
 </launch>
