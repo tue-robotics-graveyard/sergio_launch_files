@@ -28,6 +28,9 @@
     <group if="$(arg ROBOT_REAL)">
 		<!-- REAL ROBOT -->
 		
+		<!-- Dummy joint state publisher -->
+		<node pkg="sergio_description" type="publish_jointstates.py" name="temp_dummy_joint_state_publisher"/>
+		
 		<!-- Front laser -->
 		<include file="$(find sergio_launch_files)/launch/sensors/front_laser.launch"/>
 		 
