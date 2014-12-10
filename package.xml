@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package>
+  <name>sergio_launch_files</name>
+  <version>0.0.0</version>
+  <description>The sergio_launch_files package</description>
+
+  <maintainer email="S.v.d.Dries@tue.nl">Sjoerd van den Dries</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>emergency_speakup</run_depend>
+  <run_depend>sergio_gazebo</run_depend>
+
+</package>
