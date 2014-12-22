@@ -55,6 +55,6 @@
     <node name="tf_server" pkg="tf_server" type="tf_server" output="screen" />
     
      <!-- Phone UI --> <!-- only works with groovy -->
-     <include file="$(find tue_mobile_ui)/launch/sergio.launch"/>
+     <include file="$(find sergio_launch_files)/launch/interaction/mobile_ui.launch"/>
 	
 </launch>
