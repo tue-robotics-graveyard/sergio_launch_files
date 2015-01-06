@@ -32,11 +32,13 @@
     <include file="$(find sergio_launch_files)/launch/interaction/text_to_speech.launch" />
 
     <!-- Start speech recognition -->
-    <include file="$(find sergio_launch_files)/launch/interaction/speech_recognition.launch" />
+    <group if="$(arg ROBOT_REAL)">
+        <include file="$(find sergio_launch_files)/launch/interaction/df_speech_recognition.launch" />
+    </group>
+    <group unless="$(arg ROBOT_REAL)">
+        <include file="$(find sergio_launch_files)/launch/interaction/df_speech_recognition_dummy.launch" />
+    </group>
 
-    <!-- Start speech interpreter -->
-    <include file="$(find sergio_launch_files)/launch/interaction/speech_interpreter.launch" />
-    
     <!-- Start manipulation stuff -->
     <include file="$(find sergio_launch_files)/launch/manipulation/manipulation.launch" />
 
