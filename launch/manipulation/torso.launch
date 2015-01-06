@@ -5,7 +5,7 @@
     <arg name="machine" default="localhost"/>
     <include file="$(env ROBOT_MACHINE_DIR)/machines/$(arg machine).machine" />
 
-    <node pkg="torso_server" type="torso_server" respawn="false" name="torso_server" output="screen" ns="sergio" machine="$(arg machine)">
+    <node pkg="tue_manipulation" type="torso_server" respawn="false" name="torso_server" output="screen" ns="sergio" machine="$(arg machine)">
         <remap from="/sergio/torso_server/references" to="/sergio/torso/references"/>
         <remap from="/sergio/torso_server/measurements" to="/sergio/torso/measurements"/>
     </node>
