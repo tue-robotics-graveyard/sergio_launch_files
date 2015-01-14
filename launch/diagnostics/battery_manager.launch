@@ -3,6 +3,8 @@
     <rosparam file="$(find sergio_launch_files)/launch/diagnostics/parameters/battery_parameters.yaml" command="load" />
 
     <node pkg="battery_manager" type="battery_manager" respawn="false" name="battery_manager" output="screen">
+		<remap from="/battery_value" to="/sergio/battery_value"/>
+		<remap from="/battery_percentage" to="/sergio/battery_percentage"/>
     </node>
     
 </launch>
