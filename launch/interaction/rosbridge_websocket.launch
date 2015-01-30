@@ -28,6 +28,7 @@
       <remap from="/amigo/hardware_status" to="/sergio/hardware_status"/>
       <remap from="/amigo/runstop" to="/sergio/runstop"/>
       <remap from="/amigo/emergency_switch" to="/sergio/emergency_switch"/>
+      <remap from="/amigo/ebutton_status" to="/sergio/ebutton_status"/>
       <remap from="/amigo/battery_percentage" to="/sergio/battery_percentage"/>
       <remap from="/amigo/dashboard_ctrlcmds" to="/sergio/dashboard_ctrlcmds"/>
     </node>
