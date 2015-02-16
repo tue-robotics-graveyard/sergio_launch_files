@@ -7,9 +7,6 @@
     <arg name="env" default="$(optenv ROBOT_ENV robotics_testlab_B)"/>
     <arg name="ROBOT_REAL" default="$(optenv ROBOT_REAL false)" />
 
-    <!-- LOCALIZATION -->
-    <include file="$(find sergio_launch_files)/launch/localization/localization.launch"/>
-
 	<!-- NAVIGATION -->
     <include file="$(find sergio_launch_files)/launch/navigation/cb_base_navigation.launch"/> 
 
